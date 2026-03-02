@@ -2,6 +2,7 @@ import { printTaskResult } from "./utils/log";
 import { allData } from "./utils/data";
 import { decodeDoor } from "./day1";
 import { day2 } from "./day2";
+import { day3task1, day3task2 } from "./day3";
 
 // New day checklist:
 // Copy example folder
@@ -17,3 +18,6 @@ printTaskResult(1, 2, "Decode door code, updated protocol", decodeDoor(allData.d
 // Day 2
 printTaskResult(2, 1, "Sum repeating numbers", "N/A");
 printTaskResult(2, 2, "Sum more repeating numbers", day2(allData.day2));
+// Day 3
+printTaskResult(3, 1, "Calculate 2-cell battery joltage", day3task1(allData.day3));
+printTaskResult(3, 1, "Calculate 12-cell battery joltage", day3task2(allData.day3));
