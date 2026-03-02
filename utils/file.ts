@@ -2,8 +2,7 @@ import { parse } from "csv-parse/sync";
 import { assertNever } from "./types";
 import fs from "fs";
 
-export const readBigString = (filename: string): string =>
-  fs.readFileSync(filename, "utf-8");
+export const readBigString = (filename: string): string => fs.readFileSync(filename, "utf-8");
 
 export const readRows = (filename: string): string[] => {
   const fileContent = readBigString(filename);

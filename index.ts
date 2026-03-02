@@ -3,6 +3,7 @@ import { allData } from "./utils/data";
 import { decodeDoor } from "./day1";
 import { day2 } from "./day2";
 import { day3task1, day3task2 } from "./day3";
+import { getAllAvailableRolls, getAvailableRolls } from "./day4";
 
 // New day checklist:
 // Copy example folder
@@ -20,4 +21,12 @@ printTaskResult(2, 1, "Sum repeating numbers", "N/A");
 printTaskResult(2, 2, "Sum more repeating numbers", day2(allData.day2));
 // Day 3
 printTaskResult(3, 1, "Calculate 2-cell battery joltage", day3task1(allData.day3));
-printTaskResult(3, 1, "Calculate 12-cell battery joltage", day3task2(allData.day3));
+printTaskResult(3, 2, "Calculate 12-cell battery joltage", day3task2(allData.day3));
+// Day 4
+printTaskResult(4, 1, "Locate paper rolls ", getAvailableRolls(allData.day4).length);
+printTaskResult(
+  4,
+  2,
+  "Locate all retrievable paper rolls",
+  getAllAvailableRolls(allData.day4),
+);
