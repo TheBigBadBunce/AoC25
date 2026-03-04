@@ -4,6 +4,7 @@ import { decodeDoor } from "./day1";
 import { day2 } from "./day2";
 import { day3task1, day3task2 } from "./day3";
 import { getAllAvailableRolls, getAvailableRolls } from "./day4";
+import { day5task1, day5task2bruteForce, day5task2ranges } from "./day5";
 
 // New day checklist:
 // Copy example folder
@@ -30,3 +31,6 @@ printTaskResult(
   "Locate all retrievable paper rolls",
   getAllAvailableRolls(allData.day4),
 );
+// Day 5
+printTaskResult(5, 1, "Find fresh ingredients", day5task1(allData.day5));
+printTaskResult(5, 2, "Find all possible ingredients", day5task2ranges(allData.day5));
