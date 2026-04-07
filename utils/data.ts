@@ -20,10 +20,17 @@ export const separateDataBlocks = (data: string[]) => {
   return dataBlocks;
 };
 
+export const separateStringGrid = (data: string[]) => {
+  return data.map((row) => row.split(" ").filter((cell) => cell !== ""));
+};
+
+const day6 = readRows("day6/data/data.txt");
+
 export const allData = {
   day1: readRows("day1/data/data.txt"),
   day2: readBigString("day2/data/data.txt"),
   day3: readRows("day3/data/data.txt"),
   day4: readRows("day4/data/data.txt"),
   day5: readRows("day5/data/data.txt"),
+  day6: { grid: separateStringGrid(day6), rows: day6 },
 };
