@@ -6,6 +6,7 @@ import { day3task1, day3task2 } from "./day3";
 import { getAllAvailableRolls, getAvailableRolls } from "./day4";
 import { day5task1, /*day5task2bruteForce,*/ day5task2ranges } from "./day5";
 import { day6task1, day6task2 } from "./day6";
+import { day7task1, /*day7task2BruteForce,*/ day7task2 } from "./day7";
 
 // New day checklist:
 // Copy example folder
@@ -38,3 +39,6 @@ printTaskResult(5, 2, "Find all possible ingredients", day5task2ranges(allData.d
 // Day 6
 printTaskResult(6, 1, "Do maths homework", day6task1(allData.day6.grid));
 printTaskResult(6, 2, "Do maths homework (but vertically)", day6task2(allData.day6.rows));
+// Day 7
+printTaskResult(7, 1, "Count beam splits", day7task1(allData.day7));
+printTaskResult(7, 2, "Count quantum splits", day7task2(allData.day7));
