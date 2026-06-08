@@ -33,4 +33,5 @@ export const allData = {
   day4: readRows("day4/data/data.txt"),
   day5: readRows("day5/data/data.txt"),
   day6: { grid: separateStringGrid(day6), rows: day6 },
+  day7: readRows("day7/data/data.txt"),
 };
