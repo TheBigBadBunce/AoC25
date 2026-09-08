@@ -43,10 +43,15 @@ export const getMaxConnectionsForPoints = (nPoints: number): number =>
 
 export const sortPoints = (points: Point[]): Point[] => _.sortBy(points, pointIndex);
 
+export const sortConnections = (connections: Connection[]): Connection[] =>
+  _.sortBy(connections, connectionIndex);
+
 export const sortCircuits = (circuits: Circuit[]): Circuit[] =>
   _.sortBy(circuits, circuitsIndex);
 
 export const pointIndex = (point: Point) => point.x * 10000000000 + point.y * 100000 + point.z;
+
+export const connectionIndex = (connection: Connection) => connection.distance;
 
 export const circuitsIndex = (circuit: Circuit) => -circuit.size;
 
@@ -79,31 +84,21 @@ export const distanceBetweenPoints = (a: Point, b: Point) =>
   Math.sqrt(squareDiffs(a.x, b.x) + squareDiffs(a.y, b.y) + squareDiffs(a.z, b.z));
 
 export const findShortestConnections = (points: Point[], count: number) => {
-  let shortestConnections: Connection[] = [];
+  let connections: Connection[] = [];
   points.forEach((i, n) =>
     points.slice(n + 1).forEach((j) => {
       const distance = distanceBetweenPoints(i, j);
       const newConnection = { points: [i, j], distance };
       if (distance !== 0) {
-        const insertIndex = _.sortedIndexBy(
-          shortestConnections,
-          newConnection,
-          (connection: Connection) => connection.distance,
-        );
-        if (insertIndex < count) {
-          shortestConnections.splice(insertIndex, 0, newConnection);
-          if (shortestConnections.length >= count) {
-            shortestConnections = shortestConnections.slice(0, count);
-          }
-        }
+        connections.push(newConnection);
       }
     }),
   );
-  if (shortestConnections.length < count) {
-    console.log({ length: shortestConnections.length, count });
-    throw new Error("No shortest connection!");
+  if (connections.length < count) {
+    throw new Error("Not enough connections!");
   }
-  return shortestConnections;
+  const sorted = sortConnections(connections);
+  return sorted.slice(0, count);
 };
 
 export const connectPoints = (a: Point, b: Point, circuits: Circuit[]) => {
