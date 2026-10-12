@@ -78,7 +78,9 @@ export const circuitContainsPoint = (circuit: Circuit, point: Point) => {
   return !!circuit.points.find((p) => _.isEqual(point, p));
 };
 
-export const squareDiffs = (a: number, b: number) => Math.pow(Math.abs(a - b), 2);
+export const diff = (a: number, b: number): number => Math.abs(a - b);
+
+export const squareDiffs = (a: number, b: number) => Math.pow(diff(a, b), 2);
 
 export const distanceBetweenPoints = (a: Point, b: Point) =>
   Math.sqrt(squareDiffs(a.x, b.x) + squareDiffs(a.y, b.y) + squareDiffs(a.z, b.z));

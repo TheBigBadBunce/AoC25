@@ -7,6 +7,7 @@ import {
   connectPoints,
   day8task1,
   day8task2,
+  diff,
   distanceBetweenPoints,
   findCircuitWithPoint,
   findShortestConnections,
@@ -131,6 +132,14 @@ describe("Day 8", () => {
     expect(circuitContainsPoint(onePointCircuits[0], simplePoints[2])).toEqual(false);
     expect(circuitContainsPoint(onePointCircuits[2], simplePoints[0])).toEqual(false);
     expect(circuitContainsPoint(onePointCircuits[2], simplePoints[2])).toEqual(true);
+  });
+
+  test("gets the difference between 2 numbers", () => {
+    expect(diff(1, 1)).toEqual(0);
+    expect(diff(5, 1)).toEqual(4);
+    expect(diff(1, 5)).toEqual(4);
+    expect(diff(1, -1)).toEqual(2);
+    expect(diff(-1, 1)).toEqual(2);
   });
 
   test("Squares the difference between 2 numbers", () => {
