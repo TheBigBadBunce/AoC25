@@ -8,6 +8,7 @@ import { day5task1, /*day5task2bruteForce,*/ day5task2ranges } from "./day5";
 import { day6task1, day6task2 } from "./day6";
 import { day7task1, /*day7task2BruteForce,*/ day7task2 } from "./day7";
 import { day8task1, day8task2 } from "./day8";
+import { day9task1, day9task2 } from "./day9";
 
 // New day checklist:
 // Copy example folder
@@ -45,3 +46,5 @@ printTaskResult(7, 2, "Count quantum splits", () => day7task2(allData.day7));
 // Day 8
 printTaskResult(8, 1, "Add up connections", () => day8task1(allData.day8, 1000, 3));
 printTaskResult(8, 2, "Connect everything to the wall", () => day8task2(allData.day8));
+// Day 9
+printTaskResult(9, 1, "Find big squares", () => day9task1(allData.day9));

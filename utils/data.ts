@@ -28,6 +28,7 @@ export const splitCsv = (data: string[]) =>
   data.filter((row) => !!row).map((row) => row.split(",").map((datum) => parseInt(datum)));
 const day6 = readRows("day6/data/data.txt");
 const day8 = readRows("day8/data/data.txt");
+const day9 = readRows("day9/data/data.txt");
 
 export const allData = {
   day1: readRows("day1/data/data.txt"),
@@ -38,4 +39,5 @@ export const allData = {
   day6: { grid: separateStringGrid(day6), rows: day6 },
   day7: readRows("day7/data/data.txt"),
   day8: splitCsv(day8),
+  day9: splitCsv(day9),
 };
